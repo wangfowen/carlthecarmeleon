@@ -9,27 +9,48 @@
     <title>{{ page.title }}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/progress.css" />
     <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
     <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <link rel="Shortcut Icon" href="/images/favicon.ico" />
   </head>
   <body>
-    <div id="sidebar">
-      <ul class="posts">
-      {% for post in site.posts %}
-        <a href="{{ post.url }}">
-          <li>
-            <p class="title">{{ post.title }}</p>
-            <p class="date">{{ post.date | date_to_string }}</p>
-          </li>
-        </a>
-      {% endfor %}
-      </ul>
+    <div class="row">
+      <div class="2u 12u$(small)">
+        <div class="sidebar">
+          <ul class="posts">
+          {% for post in site.posts %}
+              <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+              </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="10u$ 12u$(small) important(small)">
+        <div class="content">
+          <h1 class="page-title major">{{ page.title }}</h1>
+
+          {{ content }}
+
+          <div class="page-nav">
+            {% if page.previous.url %}
+              <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+            {% endif %}
+            {% if page.next.url %}
+              <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="main">
-      {{ content }}
-    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/skel-layout.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/progress.js"></script>
   </body>
 </html>
 

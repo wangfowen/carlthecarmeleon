@@ -1,0 +1,9 @@
+{% if post.title %}
+<h1 class="major">{{ post.title }}</h1>
+{% endif %}
+<div class="entry-content">{{ content }}</div>
+<div class="page-nav">
+  {% if prev.url %}
+    <a class="prev" href="{{prev.url}}">&laquo; {{prev.title}}</a>
+  {% endif %}
+</div>

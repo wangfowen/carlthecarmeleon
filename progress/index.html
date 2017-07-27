@@ -3,4 +3,13 @@ layout: post
 title: Progress
 ---
 
-Link to latest progress
+<style>
+  .page-title {
+    display: none;
+  }
+</style>
+
+{% assign post = site.posts.first %}
+{% assign prev = site.posts[1] %}
+{% assign content = post.content %}
+{% include display_latest.html %}
