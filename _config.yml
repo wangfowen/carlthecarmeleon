@@ -8,4 +8,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - .gitignore
+  - _new_post.rb
+  - _template.md
   - README.md
