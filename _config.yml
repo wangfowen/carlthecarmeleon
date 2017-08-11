@@ -11,3 +11,4 @@ exclude:
   - _new_post.rb
   - _template.md
   - README.md
+  - vendor
