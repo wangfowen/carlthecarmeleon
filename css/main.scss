@@ -5,86 +5,185 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #fff;
 }
 
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-  overflow: hidden;
   box-sizing: border-box;
   background: #000;
   font-family: 'Mina', sans-serif;
 }
 
 #wrapper {
-  background: url('/assets/bg.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
   width: 100%;
-  height: 100%;
   position: relative;
+  max-width: 1000px;
+  margin: auto;
+
+  h1 {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .link {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 45px;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      color: #aaa;
+      border: 4px solid #aaa;
+    }
+  }
+
+  #bg {
+    max-width: 100%;
+  }
+
+  @media (min-width: 1000px) {
+    .d-link {
+      position: absolute;
+    }
+
+    #d-eye {
+      top: 420px;
+      right: 340px;
+    }
+
+    #d-fire {
+      top: 100px;
+      left: 200px;
+    }
+
+    #d-led {
+      top: 516px;
+      left: 213px;
+    }
+
+    #d-music {
+      top: 390px;
+      left: 370px;
+    }
+
+    #d-car {
+      top: 635px;
+      right: 455px;
+    }
+
+    #d-tail {
+      left: 40px;
+      top: 500px;
+    }
+
+    #menu-open, .m-link, #menu-desc {
+      display: none;
+    }
+  }
+
+  @media (max-width: 999px) {
+    #menu-open {
+      display: block;
+      margin: auto;
+      background-image: linear-gradient(135deg, #3023ae, #c86dd7);
+    }
+
+    #mobile-menu {
+      position: absolute;
+      background: #000;
+      width: 100%;
+      opacity: .95;
+      text-align: center;
+      padding: 20px;
+      bottom: 90px;
+
+      a {
+        display: block;
+        margin: 20px 0;
+        cursor: pointer;
+
+        &:hover, &:focus {
+          color: #aaa;
+        }
+      }
+    }
+
+    #menu-desc {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .d-link {
+      display: none;
+    }
+  }
 }
 
-.link {
-  color: #fff;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  border: 4px solid #fff;
-  display: inline-block;
+.about {
   text-align: center;
-  line-height: 45px;
-  font-size: 45px;
-  cursor: pointer;
-  display: block;
+  margin: 50px auto;
+  max-width: 1000px;
+  padding: 20px 30px;
+  background-image: linear-gradient(134deg, #3023ae, #c86dd7);
+
+  h1 {
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
 }
 
 #modal {
   width: 500px;
   height: 500px;
-  background: #333;
+  background: #000;
   position: fixed;
-  opacity: .9;
-  padding: 10px;
+  opacity: .95;
+  padding: 25px;
   z-index: 2;
   top: 50%;
   left: 50%;
   margin-left: -250px;
   margin-top: -250px;
-}
 
-#close {
-  position: absolute;
-  right: 7px;
-  top: 4px;
-  font-size: 20px;
-  color: #fff;
-  cursor: pointer;
-}
+  #close {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    font-size: 22px;
+    cursor: pointer;
 
-#content {
-  color: #fff;
-}
-
-#content div {
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-@media (max-width: 500px) {
-  #modal {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    left: 0;
-    top: 0;
+    &:hover, &:focus {
+      color: #aaa;
+    }
   }
 
-  #content div {
-    margin: 10px 0;
-    font-size: 14px;
+  #content {
+    div {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 500px) {
+      width: 100%;
+      margin-left: 0;
+      left: 0;
+
+    #content div {
+      margin: 10px 0;
+      font-size: 14px;
+    }
   }
 }
 
