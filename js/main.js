@@ -2,6 +2,7 @@ $(function() {
   var $modal = $('#modal');
   var $content = $('#content');
   var $menu = $('#mobile-menu');
+  var $body = $('body');
 
   function link(el, link) {
     el.click(function(e) {
@@ -9,6 +10,7 @@ $(function() {
       e.stopPropagation();
       $content.load(link);
       $modal.show();
+      $body.addClass("modal-open");
     });
   }
 
@@ -23,11 +25,13 @@ $(function() {
     e.preventDefault();
     e.stopPropagation();
     $modal.hide();
+    $body.removeClass("modal-open");
   });
 
   $('#bg').click(function(e) {
     e.preventDefault();
     $modal.hide();
+    $body.removeClass("modal-open");
   });
 
   $('#menu-open').click(function(e) {
