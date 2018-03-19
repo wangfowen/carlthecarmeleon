@@ -148,8 +148,8 @@ html, body {
   height: 500px;
   background: #000;
   position: fixed;
-  opacity: .95;
-  padding: 25px;
+  opacity: .8;
+  padding: 35px 25px;
   z-index: 2;
   top: 50%;
   left: 50%;
@@ -159,9 +159,9 @@ html, body {
 
   #close {
     position: absolute;
-    right: 10px;
+    right: 14px;
     top: 2px;
-    font-size: 22px;
+    font-size: 26px;
     cursor: pointer;
 
     &:hover, &:focus {
@@ -188,6 +188,10 @@ html, body {
     margin: 0;
     left: 0;
     top: 0;
+
+    #close {
+      top: 12px;
+    }
 
     #content  {
       div {
